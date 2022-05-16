@@ -1,0 +1,93 @@
+#问题一
+#3-1：浮点值numeric，整数integer，复数complex
+#3-2：levels（）
+#3-3：
+x<-"6.283185"
+as(x,"numeric")
+as.numeric(x)
+#3-4:summary,head,str,unclass,attributes,view
+#3-5:使用rm（）函数删除变量清理区间
+#问题二
+#练习3-1
+class(Inf)
+class(NA)
+class(NaN)
+class("")
+mode(Inf)
+mode(NA)
+mode(NaN)
+mode("")
+typeof(Inf)
+typeof(NA)
+typeof(NaN)
+typeof("")
+#练习3-2
+pets<-sample(c("dog","cat","dolphin","hamster","goldfish"),100,replace = TRUE)
+pets_fac<-as.factor(pets)
+summary(pets_fac)
+#l练习3-3
+apple<-30
+orange<-70
+banana<-10
+print(ls(pattern = "a"))
+#问题三
+#问题4-1
+x<-c(0,0.25,0.5,0.75,1,1.25)
+x
+#问题4-2 (1)name=value(2)names()
+#问题4-3 正整数索引，负整数索引，逻辑值索引，元素的名称索引
+#问题4-4 72
+#问题4-5 %*%
+#问题四（1）
+a<-seq(11,50,3)
+a-2:3
+#(2)
+b<-seq(1.1,4,20)
+b*c(4,5,8,9)
+#(3)
+c(1,2,4,6)+c(8,0,-1.-4)
+c(1,2,4,6)-c(8,0,-1.-4)
+c(1,2,4,6)*c(8,0,-1.-4)
+c(1,2,4,6)/c(8,0,-1.-4)
+#问题五
+#练习4-1
+n<-c(1:50)
+e<-c(n*(n+1)/2)
+e
+names(e)<-letters[1:15]
+e[c("a","e","i","o","u")]
+#练习4-2
+A=diag(c(10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,10,11),21,21)
+square=diag(A)
+square
+#问题六
+#问题5-1
+a<-list(alpha = 1, list(beta = 2, gamma = 3, delta = 4), eta = NULL)
+length(a)
+3
+#问题5-2成对列表仅在内部使用，在使用formals时可以调用
+#问题5-3使用data.frame函数、 cbind()将多个向量合成一个数据框、
+#问题5-4 使用data.franme传入check.namea=FAKSE可以使列名唯一且有效，若不使用则可是使列名既非唯一又非有效
+#问题5-5 merge函数, 使用cbind和rbind把它们连接起来
+#问题七
+#练习5-1
+x<-0:99
+sqrt_x<-sqrt(x)#将向量x开根号
+is_square_number<-sqrt_x==floor(sqrt_x)#判断sqrt_x与floor(sqrt_x)是否相等，其中floor()得到的是整数值，sqrt_x中的整数返回TRUE,小数返回FALSE
+square_numbers<-x[is_square_number]#取出x中开根号仍为整数的数，即为平凡数
+groups<-cut(square_numbers,
+            seq.int(min(x),max(x),10),
+            include.lowest=TRUE,right=FALSE)#cut()函数将square_numbers切割成十组
+split(square_numbers,groups)#split()函数将square_numbers和groups合成一个列表
+#5-2
+iris
+data.frame(iris)
+mean(iris[ ,1])
+mean(iris[ ,2])
+mean(iris[ ,3])
+mean(iris[ ,4])#使用mean计算平均值
+#练习5-3
+beaver1$id<-1
+beaver2$id<-2#在beaver1和beaver2中添加id列使其各等于1和2
+both_beavers<-rbind(beaver1,beaver2)#垂直拼接beaver1和beaver2
+subset(both_beavers,as.logical(activ))#使用subset()函数，去掉等于0的所有元素
